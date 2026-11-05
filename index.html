@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vila Permai - Pemesanan Vila Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header & Navigasi Semantik -->
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Vila Permai</h1>
+      <p class="header__subtitle">Sewa Vila Nyaman di Kawasan Puncak, Bogor</p>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="container nav__container">
+      <a href="#katalog" class="nav__link">Katalog Vila</a>
+      <a href="#pemesanan" class="nav__link">Formulir Pesan</a>
+      <a href="#kontak" class="nav__link">Kontak</a>
+    </div>
+  </nav>
+
+  <!-- Isi Utama -->
+  <main class="container main-content">
+    
+    <!-- Fitur Filter / Pencarian -->
+    <section class="search-section">
+      <h2>Cari & Filter Vila</h2>
+      <input type="text" id="inputCari" class="form-control" placeholder="Ketik nama atau lokasi vila...">
+    </section>
+
+    <!-- Katalog Vila (Di-render dari JS) -->
+    <section id="katalog" class="katalog-section">
+      <h2>Daftar Unit Vila</h2>
+      <div id="containerVila" class="villa-grid">
+        <!-- Artikel vila akan muncul di sini via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Formulir Pemesanan -->
+    <section id="pemesanan" class="booking-section">
+      <h2>Formulir Pemesanan Vila</h2>
+      <form id="formPemesanan" class="booking-form" novalidate>
+        
+        <div class="form-group">
+          <label for="namaTamu">Nama Lengkap Tamu</label>
+          <input type="text" id="namaTamu" class="form-control" placeholder="Masukkan nama lengkap Anda">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="checkIn">Tanggal Check-In</label>
+            <input type="date" id="checkIn" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Tanggal Check-Out</label>
+            <input type="date" id="checkOut" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="jumlahTamu">Jumlah Tamu (1-10 Orang)</label>
+            <input type="number" id="jumlahTamu" class="form-control" min="1" max="10" value="1">
+          </div>
+          <div class="form-group">
+            <label for="pilihanVila">Pilihan Unit Vila</label>
+            <select id="pilihanVila" class="form-control">
+              <!-- Option diisi otomatis dari JavaScript -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Area Pesan Kesalahan Bahasa Indonesia -->
+        <div id="pesanError" class="error-message"></div>
+
+        <!-- Rincian & Total Biaya Otomatis -->
+        <div class="kalkulasi-box">
+          <p>Lama Menginap: <strong id="outputMalam">0</strong> Malam</p>
+          <p>Total Estimasi Biaya: <strong id="outputTotal">Rp 0</strong></p>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="btnCekHarga" class="btn btn--secondary">Cek Ketersediaan & Biaya</button>
+          <button type="submit" class="btn btn--primary">Pesan Sekarang</button>
+        </div>
+      </form>
+
+      <!-- Area Hasil Ringkasan Pesanan -->
+      <div id="areaHasil" class="hasil-box" style="display: none;">
+        <h3>Ringkasan Pesanan Berhasil!</h3>
+        <p id="detailHasil"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="kontak" class="footer">
+    <div class="container">
+      <h3>Vila Permai Puncak</h3>
+      <p>Pemilik: Pak Hendra | Telepon/WA: 0812-3456-7890</p>
+      <p>Kawasan Puncak, Kabupaten Bogor, Jawa Barat</p>
+      <p>&copy; 2026 Vila Permai. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* ===== Reset & Box Model ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== Header & Navigasi ===== */
+.header {
+  background-color: #1e4d2b;
+  color: #ffffff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.header__subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.nav {
+  background-color: #2e7d32;
+  padding: 10px 0;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: #a5d6a7;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  padding: 30px 15px;
+}
+
+section {
+  margin-bottom: 40px;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #1e4d2b;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+/* ===== Grid Katalog Vila ===== */
+.villa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.villa-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.villa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.villa-card__title {
+  font-size: 1.4rem;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.villa-card__price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d32f2f;
+  margin-bottom: 10px;
+}
+
+.villa-card__status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.villa-card__status--tersedia {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.villa-card__status--penuh {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* ===== Formulir ===== */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #2e7d32;
+}
+
+/* ===== Kalkulasi & Pesan Error ===== */
+.kalkulasi-box {
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  border-left: 5px solid #2e7d32;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: none;
+  font-weight: bold;
+}
+
+/* ===== Tombol & Animation ===== */
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn--primary {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: #1e4d2b;
+}
+
+.btn--secondary {
+  background-color: #1976d2;
+  color: white;
+}
+
+.btn--secondary:hover {
+  background-color: #0d47a1;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.hasil-box {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #e3f2fd;
+  border-radius: 5px;
+  border: 1px solid #90caf9;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 40px;
+}
+
+/* ===== Responsif Breakpoint (Media Queries) ===== */
+@media (max-width: 768px) {
+  .villa-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__title {
+    font-size: 1.6rem;
+  }
+
+  .nav__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
