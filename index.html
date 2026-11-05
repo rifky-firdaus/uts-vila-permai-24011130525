@@ -22,24 +22,17 @@
     </div>
   </nav>
 
-  <!-- Isi Utama -->
   <main class="container main-content">
-    
-    <!-- Fitur Filter / Pencarian -->
     <section class="search-section">
       <h2>Cari & Filter Vila</h2>
       <input type="text" id="inputCari" class="form-control" placeholder="Ketik nama atau lokasi vila...">
     </section>
 
-    <!-- Katalog Vila (Di-render dari JS) -->
     <section id="katalog" class="katalog-section">
       <h2>Daftar Unit Vila</h2>
-      <div id="containerVila" class="villa-grid">
-        <!-- Artikel vila akan muncul di sini via JavaScript -->
-      </div>
+      <div id="containerVila" class="villa-grid"></div>
     </section>
 
-    <!-- Formulir Pemesanan -->
     <section id="pemesanan" class="booking-section">
       <h2>Formulir Pemesanan Vila</h2>
       <form id="formPemesanan" class="booking-form" novalidate>
@@ -67,15 +60,12 @@
           </div>
           <div class="form-group">
             <label for="pilihanVila">Pilihan Unit Vila</label>
-            <select id="pilihanVila" class="form-control">
-              <!-- Option diisi otomatis dari JavaScript -->
-            </select>
+            <select id="pilihanVila" class="form-control"></select>
           </div>
         </div>
 
         <div id="pesanError" class="error-message"></div>
 
-        <!-- Rincian & Total Biaya Otomatis -->
         <div class="kalkulasi-box">
           <p>Lama Menginap: <strong id="outputMalam">0</strong> Malam</p>
           <p>Total Estimasi Biaya: <strong id="outputTotal">Rp 0</strong></p>
@@ -98,7 +88,7 @@
   <footer id="kontak" class="footer">
     <div class="container">
       <h3>Vila Permai Puncak</h3>
-      <p>Pemilik: Pak Ujang | Telepon/WA: 0812-42442-7890</p>
+      <p>Pemilik: Pak Rifky | Telepon/WA: 0812-42442-7890</p>
       <p>Kawasan Puncak, Kabupaten Bogor, Jawa Barat</p>
       <p>&copy; 2026 Vila Permai. All Rights Reserved.</p>
     </div>
