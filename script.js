@@ -1,4 +1,3 @@
-// ===== 1. Data Array Objek Vila =====
 const dataVila = [
   {
     id: "v1",
@@ -29,7 +28,6 @@ const dataVila = [
   }
 ];
 
-// ===== 2. Ambil Elemen DOM =====
 const containerVila = document.getElementById("containerVila");
 const pilihanVilaSelect = document.getElementById("pilihanVila");
 const inputCari = document.getElementById("inputCari");
@@ -82,14 +80,12 @@ function renderKatalogVila(daftar) {
       spanStatus.className = `villa-card__status ${vila.tersedia ? 'villa-card__status--tersedia' : 'villa-card__status--penuh'}`;
       spanStatus.textContent = vila.tersedia ? "Tersedia" : "Sudah Dipesan";
 
-      // Gabungkan ke elemen article
       article.appendChild(h3);
       article.appendChild(pHarga);
       article.appendChild(pInfo);
       article.appendChild(pFasilitas);
       article.appendChild(spanStatus);
 
-      // Masukkan ke dalam DOM
       containerVila.appendChild(article);
     });
   } catch (err) {
@@ -97,7 +93,6 @@ function renderKatalogVila(daftar) {
   }
 }
 
-// ===== 4. Populate Dropdown Pilihan Vila =====
 function isiDropdownVila() {
   pilihanVilaSelect.innerHTML = "";
   dataVila.forEach(vila => {
@@ -109,7 +104,6 @@ function isiDropdownVila() {
   });
 }
 
-// ===== 5. Fitur Filter / Pencarian Vila =====
 inputCari.addEventListener("input", function () {
   const kataKunci = inputCari.value.toLowerCase().trim();
   const hasilFilter = dataVila.filter(vila => 
@@ -119,7 +113,6 @@ inputCari.addEventListener("input", function () {
   renderKatalogVila(hasilFilter);
 });
 
-// ===== 6. Logika Hitung Total Harga =====
 function hitungTotalHarga() {
   const checkIn = new Date(inputCheckIn.value);
   const checkOut = new Date(inputCheckOut.value);
@@ -144,7 +137,7 @@ function hitungTotalHarga() {
   return totalBiaya;
 }
 
-// ===== 7. Validasi Formulir =====
+// ===== Validasi Formulir =====
 function validasiForm() {
   const nama = inputNamaTamu.value.trim();
   const checkInStr = inputCheckIn.value;
@@ -153,7 +146,6 @@ function validasiForm() {
   const checkInDate = new Date(checkInStr);
   const checkOutDate = new Date(checkOutStr);
 
-  // Ambil tanggal hari ini tanpa jam
   const hariIni = new Date();
   hariIni.setHours(0, 0, 0, 0);
 
@@ -173,10 +165,9 @@ function validasiForm() {
     return "Jumlah tamu harus antara 1 sampai 10 orang.";
   }
 
-  return ""; // Kosong artinya valid
+  return ""; 
 }
 
-// Event listener tombol Cek Biaya
 btnCekHarga.addEventListener("click", function () {
   const pesanPeringatan = validasiForm();
   if (pesanPeringatan) {
@@ -187,7 +178,6 @@ btnCekHarga.addEventListener("click", function () {
   }
 });
 
-// Otomatis hitung total saat tanggal berubah
 inputCheckIn.addEventListener("change", hitungTotalHarga);
 inputCheckOut.addEventListener("change", hitungTotalHarga);
 pilihanVilaSelect.addEventListener("change", hitungTotalHarga);
@@ -202,7 +192,7 @@ function sembunyikanError() {
   pesanError.textContent = "";
 }
 
-// ===== 8. Submit Form & LocalStorage =====
+// ===== Submit Form & LocalStorage =====
 formPemesanan.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -243,7 +233,7 @@ formPemesanan.addEventListener("submit", function (e) {
   areaHasil.style.display = "block";
 });
 
-// ===== 9. Load Data dari LocalStorage saat Halaman Dibuka =====
+// ===== Load Data dari LocalStorage saat Halaman Dibuka =====
 window.addEventListener("DOMContentLoaded", function () {
   renderKatalogVila(dataVila);
   isiDropdownVila();

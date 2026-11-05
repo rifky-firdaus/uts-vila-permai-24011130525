@@ -1,4 +1,3 @@
-/* ===== Reset & Box Model ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +18,6 @@ body {
   padding: 0 15px;
 }
 
-/* ===== Header & Navigasi ===== */
 .header {
   background-color: #1e4d2b;
   color: #ffffff;
@@ -79,7 +77,6 @@ h2 {
   padding-bottom: 8px;
 }
 
-/* ===== Grid Katalog Vila ===== */
 .villa-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -131,7 +128,6 @@ h2 {
   color: #c62828;
 }
 
-/* ===== Formulir ===== */
 .form-group {
   margin-bottom: 15px;
 }
@@ -161,7 +157,6 @@ label {
   border-color: #2e7d32;
 }
 
-/* ===== Kalkulasi & Pesan Error ===== */
 .kalkulasi-box {
   background-color: #e8f5e9;
   padding: 15px;
@@ -180,7 +175,6 @@ label {
   font-weight: bold;
 }
 
-/* ===== Tombol & Animation ===== */
 .form-actions {
   display: flex;
   gap: 10px;
@@ -232,7 +226,6 @@ label {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Footer ===== */
 .footer {
   background-color: #1b5e20;
   color: white;
@@ -241,7 +234,6 @@ label {
   margin-top: 40px;
 }
 
-/* ===== Responsif Breakpoint (Media Queries) ===== */
 @media (max-width: 768px) {
   .villa-grid {
     grid-template-columns: 1fr;
