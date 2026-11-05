@@ -46,10 +46,9 @@ const btnCekHarga = document.getElementById("btnCekHarga");
 const areaHasil = document.getElementById("areaHasil");
 const detailHasil = document.getElementById("detailHasil");
 
-// ===== 3. Render Daftar Vila Menggunakan createElement & appendChild =====
 function renderKatalogVila(daftar) {
   try {
-    containerVila.innerHTML = ""; // Bersihkan kontainer
+    containerVila.innerHTML = "";
 
     if (daftar.length === 0) {
       const pesanKosong = document.createElement("p");
@@ -125,7 +124,6 @@ function hitungTotalHarga() {
     return 0;
   }
 
-  // Hitung selisih hari
   const selisihWaktu = checkOut.getTime() - checkIn.getTime();
   const jumlahMalam = Math.ceil(selisihWaktu / (1000 * 3600 * 24));
   
@@ -137,7 +135,6 @@ function hitungTotalHarga() {
   return totalBiaya;
 }
 
-// ===== Validasi Formulir =====
 function validasiForm() {
   const nama = inputNamaTamu.value.trim();
   const checkInStr = inputCheckIn.value;
@@ -192,7 +189,6 @@ function sembunyikanError() {
   pesanError.textContent = "";
 }
 
-// ===== Submit Form & LocalStorage =====
 formPemesanan.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -207,7 +203,6 @@ formPemesanan.addEventListener("submit", function (e) {
   const totalBiaya = hitungTotalHarga();
   const vilaDipilih = dataVila.find(v => v.id === pilihanVilaSelect.value);
 
-  // Simpan nama dan pesanan terakhir ke LocalStorage
   const pesananTerakhir = {
     nama: inputNamaTamu.value.trim(),
     vila: vilaDipilih.nama,
@@ -223,7 +218,6 @@ formPemesanan.addEventListener("submit", function (e) {
     console.warn("Gagal menyimpan ke LocalStorage:", err);
   }
 
-  // Tampilkan ringkasan pesanan
   detailHasil.innerHTML = `
     Terima kasih <strong>${pesananTerakhir.nama}</strong>!<br>
     Pemesanan untuk <strong>${pesananTerakhir.vila}</strong> (${outputMalam.textContent} malam) telah berhasil dikirim.<br>
@@ -233,7 +227,6 @@ formPemesanan.addEventListener("submit", function (e) {
   areaHasil.style.display = "block";
 });
 
-// ===== Load Data dari LocalStorage saat Halaman Dibuka =====
 window.addEventListener("DOMContentLoaded", function () {
   renderKatalogVila(dataVila);
   isiDropdownVila();
