@@ -24,7 +24,12 @@ Aplikasi web statis berbasis Client-Side untuk pemesanan kamar pada unit usaha V
 - [x] Fitur Penyimpanan Nama Tamu di LocalStorage
 
 ## Tangkapan Layar (Screenshot)
-(Tambahkan gambar screenshot di sini)
-1. Tampilan Utama Browser
-2. Tampilan Responsif Mobile View
-3. Riwayat Commit GitHub
+
+1. **Tampilan Utama Browser**
+   ![Tampilan Utama Browser](assets/desktop.png)
+
+2. **Tampilan Responsif Mobile View**
+   ![Tampilan Responsif Mobile View](assets/mobile1.png)
+
+3. **Riwayat Commit GitHub**
+   ![Riwayat Commit GitHub](assets/commits.png)
