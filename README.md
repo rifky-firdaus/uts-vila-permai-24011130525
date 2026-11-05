@@ -25,11 +25,12 @@ Aplikasi web statis berbasis Client-Side untuk pemesanan kamar pada unit usaha V
 
 ## Tangkapan Layar (Screenshot)
 
-1. **Tampilan Utama Browser**
+1. **Tampilan Utama Browser (Desktop View)**
    ![Tampilan Utama Browser](assets/desktop.png)
 
 2. **Tampilan Responsif Mobile View**
-   ![Tampilan Responsif Mobile View](assets/mobile1.png)
+   ![Tampilan Mobile 1](assets/mobile1.png)
+   ![Tampilan Mobile 2](assets/mobile2.png)
 
 3. **Riwayat Commit GitHub**
    ![Riwayat Commit GitHub](assets/commits.png)
